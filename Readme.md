@@ -1,6 +1,6 @@
 # Wait a minute, what is this black magic?
 
-`navigation-timing-analytics` is a small script, that will try to take Navigation Timing API metrics right after page load and send them to your InfluxDB. It will laverege Beacon API if possible to have little or no influence on page loading experience, but it'll work in safari too!
+`navigation-timing-analytics` is a small script, that will try to take Navigation Timing API metrics (and maybe a little bit of URL and user agent) right after page load and send them to your InfluxDB. It will laverege Beacon API if possible to have little or no influence on page loading experience, but it'll work in safari too!
 
 **WTF does "right after the page load" mean**
 
