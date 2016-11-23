@@ -2,19 +2,6 @@
 
 `navigation-timing-analytics` is a small script, that will try to take Navigation Timing API metrics (and maybe a little bit of URL and user agent) right after page load and send them to your InfluxDB. It will laverege Beacon API if possible to have little or no influence on page loading experience, but it'll work in safari too!
 
-**WTF does "right after the page load" mean**
-
-More or less the same as 
-```js
-window.addEventListener('load', funciton(){ 
-    setTimeout(stuff);
-})
-```
-
-**My https page does not appear in InfluxDB metric :(**
-
-Bear in mind that if your page sits on `https`, then your InfluxDB api needs to be using `https` as well. Otherwise browser will block the request as unsafe. 
-
 # Usage
 
 ## Via script load
@@ -105,6 +92,22 @@ Give it a try with some simple queries:
 ```sql
  select responseEnd - navigationStart as "Net'working", domInteractive - domLoading as "DOM parsing", domContentLoadedEventStart - domInteractive as "Parser blocking <script>", domContentLoadedEventEnd - domContentLoadedEventStart as "ready/DOMContentLoaded event js", loadEventStart - domInteractive as "Images and other assets loading",loadEventEnd - loadEventStart as "Load event js", loadEventEnd - navigationStart as "Total time" from my_ultra_page
 ```
+
+# FAQ
+
+**WTF does "right after the page load" mean**
+
+More or less the same as 
+```js
+window.addEventListener('load', funciton(){ 
+    setTimeout(stuff);
+})
+```
+
+**My https page does not appear in InfluxDB metric :(**
+
+Bear in mind that if your page sits on `https`, then your InfluxDB api needs to be using `https` as well. Otherwise browser will block the request as unsafe. 
+
 
 # Want to contribute?
 
