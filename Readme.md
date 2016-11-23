@@ -109,8 +109,7 @@ window.addEventListener('load', funciton(){
 Bear in mind that if your page sits on `https`, then your InfluxDB api needs to be using `https` as well. Otherwise browser will block the request as unsafe. 
 
 
-# Want to contribute?
-
+**Can you add XYZ feature**
 This lib is fairly basic and written with one simple task in mind. If you'd like to see more features feel free to propose changes.
 
-Fork, commit, create PR - it's as simple as that!
+Also I am sure you could do it faster than me, so don't hesitate to fork, commit and create PR!
