@@ -1,9 +1,26 @@
+# Wait a minute, what is this black magic?
+
+`navigation-timing-analytics` is a small script, that will try to take Navigation Timing API metrics right after page load and send them to your InfluxDB. It will laverege Beacon API if possible to have little or no influence on page loading experience, but it'll work in safari too!
+
+**WTF does "right after the page load" mean**
+
+More or less the same as 
+```js
+window.addEventListener('load', funciton(){ 
+    setTimeout(stuff);
+})
+```
+
+**My https page does not appear in InfluxDB metric :(**
+
+Bear in mind that if your page sits on `https`, then your InfluxDB api needs to be using `https` as well. Otherwise browser will block the request as unsafe. 
+
 # Usage
 
 ## Via script load
 
 ```html
-<script src="../navigation-timing-analytics.min.js" type="text/javascript"></script>
+<script src="navigation-timing-analytics.min.js" type="text/javascript"></script>
 <script>
     timingAnalytics('https://your-influx.com', 'influx_db','influx_username', 'influx_password', 'metrics');
 </script>
@@ -19,7 +36,7 @@ timingAnalytics('https://your-influx.com', 'influx_db','influx_username', 'influ
 
 ## And that is it! 
 Each call to the `timingAnalytics` will place a set of metrics from Navigation Timing API
-In your influxDb you'll find now metrics for your page:
+In your InfluxDB you'll find now metrics for your page:
 
 ```
 > select * from my_ultra_page
@@ -91,6 +108,6 @@ Give it a try with some simple queries:
 
 # Want to contribute?
 
-This lib is fairly basic, so if you'd like to see more features feel free to propose changes.
+This lib is fairly basic and written with one simple task in mind. If you'd like to see more features feel free to propose changes.
 
 Fork, commit, create PR - it's as simple as that!
