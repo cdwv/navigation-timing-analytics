@@ -110,6 +110,7 @@ Bear in mind that if your page sits on `https`, then your InfluxDB api needs to 
 
 
 **Can you add XYZ feature**
+
 This lib is fairly basic and written with one simple task in mind. If you'd like to see more features feel free to propose changes.
 
 Also I am sure you could do it faster than me, so don't hesitate to fork, commit and create PR!
