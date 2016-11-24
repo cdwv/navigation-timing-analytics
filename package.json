@@ -1,6 +1,6 @@
 {
   "name": "navigation-timing-analytics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple library that will help you track navigation timing API data.",
   "main": "navigation-timing-analytics.js",
   "author": "CodeWave Team",

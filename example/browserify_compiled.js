@@ -24,6 +24,9 @@ timingAnalytics('https://your-influx.com', 'influx_db','influx_username', 'influ
                 if(!performance.timing)
                     return;
 
+                if(!influxMetricsName)
+                    influxMetricsName = window.location.hostname.replace(/\./g, '_');
+
                 var keys = [
                     'navigationStart',
                     'fetchStart',
