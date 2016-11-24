@@ -14,7 +14,7 @@
                     return;
 
                 if(!influxMetricsName)
-                    influxMetricsName = window.location.hostname.replace(/\./g, '_');
+                    influxMetricsName = root.location.hostname.replace(/\./g, '_');
 
                 var keys = [
                     'navigationStart',
