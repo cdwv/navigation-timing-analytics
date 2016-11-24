@@ -13,9 +13,6 @@
                 if(!performance.timing)
                     return;
 
-                if(!influxMetricsName)
-                    influxMetricsName = root.location.hostname.replace(/\./g, '_');
-
                 var keys = [
                     'navigationStart',
                     'fetchStart',
